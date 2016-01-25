@@ -89,7 +89,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 105, height: 105)
     }
     
-    @IBAction func musicBtnPressed(sender: AnyObject) {
+    @IBAction func musicBtnPressed(sender: UIButton) {
+        
+        if musicPlayer.playing {
+            musicPlayer.stop()
+            sender.alpha = 0.3
+        } else {
+            musicPlayer.play()
+            sender.alpha = 1.0
+        }
     }
 
 }
