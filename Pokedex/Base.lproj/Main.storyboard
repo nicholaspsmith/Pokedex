@@ -47,7 +47,7 @@
                                         </constraints>
                                         <state key="normal" image="notes"/>
                                         <connections>
-                                            <action selector="musicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jyi-lC-9gg"/>
+                                            <action selector="musicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsp-in-iPq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -146,7 +146,6 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="PFV-3X-Yie" id="00B-Gs-0Oc"/>
-                        <outlet property="musicBtnPressed" destination="jup-ZU-eCO" id="CnX-Bm-YJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
