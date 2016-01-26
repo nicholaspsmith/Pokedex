@@ -119,6 +119,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
             inSearchMode = false
+            view.endEditing(true)
+            collection.reloadData()
         } else {
             inSearchMode = true
             let lower = searchBar.text!.lowercaseString
