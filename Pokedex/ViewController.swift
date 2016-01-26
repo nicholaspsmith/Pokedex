@@ -26,6 +26,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.dataSource = self
         
         searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.Done
         
         parsePokemonCSV()
         initAudio()
@@ -114,6 +115,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             musicPlayer.play()
             sender.alpha = 1.0
         }
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
