@@ -29,36 +29,58 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S4L-TT-pLr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTh-W6-0K2">
-                                        <rect key="frame" x="224" y="10" width="152" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="152" id="0HE-cg-YXt"/>
-                                            <constraint firstAttribute="height" constant="34" id="HBX-8o-LGp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="24"/>
-                                        <color key="textColor" red="0.95064807920000005" green="1" blue="0.94668253440000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jup-ZU-eCO">
-                                        <rect key="frame" x="567" y="13" width="25" height="27"/>
+                                        <rect key="frame" x="573" y="19" width="19" height="21"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="19" id="8S4-uv-ZOK"/>
                                             <constraint firstAttribute="width" constant="25" id="XS4-cf-riN"/>
                                             <constraint firstAttribute="height" constant="27" id="lJY-Dq-fXP"/>
+                                            <constraint firstAttribute="height" constant="21" id="zMQ-lz-QDo"/>
                                         </constraints>
                                         <state key="normal" image="notes"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XS4-cf-riN"/>
+                                                <exclude reference="lJY-Dq-fXP"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="musicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsp-in-iPq"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTh-W6-0K2">
+                                        <rect key="frame" x="235" y="12" width="130" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="152" id="0HE-cg-YXt"/>
+                                            <constraint firstAttribute="height" constant="29" id="1xg-mK-TYU"/>
+                                            <constraint firstAttribute="height" constant="34" id="HBX-8o-LGp"/>
+                                            <constraint firstAttribute="width" constant="130" id="UjW-W4-4hD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="24"/>
+                                        <color key="textColor" red="0.95064807920000005" green="1" blue="0.94668253440000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0HE-cg-YXt"/>
+                                                <exclude reference="HBX-8o-LGp"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.42352941176470588" green="0.62745098039215685" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="uTh-W6-0K2" firstAttribute="centerX" secondItem="S4L-TT-pLr" secondAttribute="centerX" id="896-Qb-nqs"/>
+                                    <constraint firstItem="uTh-W6-0K2" firstAttribute="top" secondItem="S4L-TT-pLr" secondAttribute="top" constant="20" id="ADW-dl-02X"/>
                                     <constraint firstAttribute="trailing" secondItem="jup-ZU-eCO" secondAttribute="trailing" constant="8" id="Dw5-Zn-nUE"/>
                                     <constraint firstAttribute="height" constant="55" id="GEc-dM-wUc"/>
-                                    <constraint firstItem="jup-ZU-eCO" firstAttribute="top" secondItem="S4L-TT-pLr" secondAttribute="top" constant="12" id="J65-wN-17s"/>
+                                    <constraint firstItem="jup-ZU-eCO" firstAttribute="top" secondItem="S4L-TT-pLr" secondAttribute="top" constant="20" id="J65-wN-17s"/>
                                     <constraint firstItem="uTh-W6-0K2" firstAttribute="centerY" secondItem="S4L-TT-pLr" secondAttribute="centerY" id="tn5-vp-tFV"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tn5-vp-tFV"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PFV-3X-Yie">
                                 <rect key="frame" x="20" y="120" width="560" height="460"/>
