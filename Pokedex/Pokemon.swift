@@ -174,8 +174,7 @@ class Pokemon {
                 } else {
                     self._description = ""
                 }
-                
-//                print(dict.debugDescription)
+
                 
                 if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0 {
                     
@@ -202,12 +201,16 @@ class Pokemon {
                                     if let finalForm = res.value as? Dictionary<String, AnyObject> {
                                         print(finalForm.debugDescription)
                                         if let finalEvolutions = finalForm["evolutions"] as? [Dictionary<String, AnyObject>] where finalEvolutions.count > 0 {
-                                            if let finalUri = finalEvolutions[0]["resource_uri"] as? String {
-                                                let newFinalStr = finalUri.stringByReplacingOccurrencesOfString(URL_POKEMON, withString: "")
-                                                let finalNum = newFinalStr.stringByReplacingOccurrencesOfString("/", withString: "")
-                                                self._finalEvolutionId = finalNum
-                                                print(self._finalEvolutionId)
+                                            if let finalTo = finalEvolutions[0]["to"] as? String {
+                                                if finalTo.rangeOfString("mega") == nil {
+                                                    if let finalUri = finalEvolutions[0]["resource_uri"] as? String {
+                                                        let newFinalStr = finalUri.stringByReplacingOccurrencesOfString(URL_POKEMON, withString: "")
+                                                        let finalNum = newFinalStr.stringByReplacingOccurrencesOfString("/", withString: "")
+                                                        self._finalEvolutionId = finalNum
+                                                    }
+                                                }
                                             }
+
                                         }
                                     }
                                     

@@ -60,11 +60,16 @@ class PokeDetailVC: UIViewController {
             }
         }
         
-
-        nextEvoImg2.image = UIImage(named: "\(pokemon.finalEvolutionId)")
+        print(pokemon.finalEvolutionId)
         
+        if pokemon.finalEvolutionId == "" {
+            nextEvoImg2.hidden = true
+        } else {
+            nextEvoImg2.hidden = false
+        }
         
         nextEvoImg1.image = UIImage(named: "\(pokemon.nextEvolutionId)")
+        nextEvoImg2.image = UIImage(named: "\(pokemon.finalEvolutionId)")
     }
 
     override func didReceiveMemoryWarning() {
