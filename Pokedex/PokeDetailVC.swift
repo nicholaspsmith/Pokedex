@@ -16,18 +16,12 @@ class PokeDetailVC: UIViewController {
     
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var descriptionLbl: UILabel!
-    
     @IBOutlet weak var typeLbl: UILabel!
-    
     @IBOutlet weak var defenseLbl: UILabel!
-    
     @IBOutlet weak var heightLbl: UILabel!
-    
     @IBOutlet weak var pokedexLbl: UILabel!
     @IBOutlet weak var weightLbl: UILabel!
-    
     @IBOutlet weak var baseattackLbl: UILabel!
-    
     @IBOutlet weak var nextEvoTxtLbl: UILabel!
     @IBOutlet weak var nextEvoImg1: UIImageView!
     @IBOutlet weak var nextEvoImg2: UIImageView!
@@ -36,6 +30,7 @@ class PokeDetailVC: UIViewController {
         super.viewDidLoad()
 
         nameLbl.text = pokemon.name
+        mainImg.image = UIImage(named: "\(pokemon.pokedexId)")
     }
 
     override func didReceiveMemoryWarning() {
