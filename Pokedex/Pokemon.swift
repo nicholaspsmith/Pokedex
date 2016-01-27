@@ -21,6 +21,7 @@ class Pokemon {
     private var _nextEvolutionTxt: String!
     private var _nextEvolutionId: String!
     private var _nextEvolutionLvl: String!
+    private var _finalEvolutionId: String!
     private var _pokemonUrl: String!
     
     var name: String {
@@ -32,39 +33,73 @@ class Pokemon {
     }
     
     var description: String {
+        if _description == nil {
+            _description = ""
+        }
         return _description
     }
     
     var type: String {
+        if _type == nil {
+            _type = ""
+        }
         return _type
     }
     
     var defense: String {
+        if _defense == nil {
+            _defense = ""
+        }
         return _defense
     }
     
     var height: String {
+        if _height == nil {
+            _height = ""
+        }
         return _height
     }
     
     var weight: String {
+        if _weight == nil {
+            _weight = ""
+        }
         return _weight
     }
     
     var baseattack: String {
+        if _baseattack == nil {
+            _baseattack = ""
+        }
         return _baseattack
     }
     
     var nextEvolutionTxt: String {
+        if _nextEvolutionTxt == nil {
+            _nextEvolutionTxt = ""
+        }
         return _nextEvolutionTxt
     }
     
     var nextEvolutionId: String {
+        if _nextEvolutionId == nil {
+            _nextEvolutionId = ""
+        }
         return _nextEvolutionId
     }
     
     var nextEvolutionLvl: String {
+        if _nextEvolutionLvl == nil {
+            _nextEvolutionLvl = ""
+        }
         return _nextEvolutionLvl
+    }
+    
+    var finalEvolutionId: String {
+        if _finalEvolutionId == nil {
+            _finalEvolutionId = ""
+        }
+        return _finalEvolutionId
     }
     
     
@@ -128,9 +163,10 @@ class Pokemon {
                                 
                                 if let description = descDict["description"] as? String {
                                     self._description = description
-                                    print(self._description)
+
                                 }
                             }
+                            
                             completed()
                         }
                     }
@@ -138,6 +174,8 @@ class Pokemon {
                 } else {
                     self._description = ""
                 }
+                
+//                print(dict.debugDescription)
                 
                 if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] where evolutions.count > 0 {
                     
@@ -157,13 +195,32 @@ class Pokemon {
                                     self._nextEvolutionLvl = "\(lvl)"
                                 }
                                 
-                                print(self._nextEvolutionLvl)
+                                let nsurl = NSURL(string: "\(URL_BASE)\(uri)")!
+                                Alamofire.request(.GET, nsurl).responseJSON { response in
+                                    
+                                    let res = response.result
+                                    if let finalForm = res.value as? Dictionary<String, AnyObject> {
+                                        print(finalForm.debugDescription)
+                                        if let finalEvolutions = finalForm["evolutions"] as? [Dictionary<String, AnyObject>] where finalEvolutions.count > 0 {
+                                            if let finalUri = finalEvolutions[0]["resource_uri"] as? String {
+                                                let newFinalStr = finalUri.stringByReplacingOccurrencesOfString(URL_POKEMON, withString: "")
+                                                let finalNum = newFinalStr.stringByReplacingOccurrencesOfString("/", withString: "")
+                                                self._finalEvolutionId = finalNum
+                                                print(self._finalEvolutionId)
+                                            }
+                                        }
+                                    }
+                                    
+                                    
+                                    completed()
+                                    
+                                }
                             }
                         }
                     }
                 }
                 
-                
+                completed()
             }
         }
         
