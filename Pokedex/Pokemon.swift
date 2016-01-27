@@ -199,7 +199,6 @@ class Pokemon {
                                     
                                     let res = response.result
                                     if let finalForm = res.value as? Dictionary<String, AnyObject> {
-                                        print(finalForm.debugDescription)
                                         if let finalEvolutions = finalForm["evolutions"] as? [Dictionary<String, AnyObject>] where finalEvolutions.count > 0 {
                                             if let finalTo = finalEvolutions[0]["to"] as? String {
                                                 if finalTo.rangeOfString("mega") == nil {
@@ -213,7 +212,6 @@ class Pokemon {
 
                                         }
                                     }
-                                    
                                     
                                     completed()
                                     
