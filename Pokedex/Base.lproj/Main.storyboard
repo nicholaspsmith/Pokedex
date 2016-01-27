@@ -29,7 +29,7 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S4L-TT-pLr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jup-ZU-eCO">
+                                    <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jup-ZU-eCO">
                                         <rect key="frame" x="573" y="19" width="19" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="19" id="8S4-uv-ZOK"/>
