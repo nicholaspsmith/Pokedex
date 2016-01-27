@@ -19,6 +19,11 @@ class Pokemon {
     private var _baseattack: String!
     private var _nextEvolution: String!
     
+    private var _pokemonUrl: String!
+    
+    // Calls pokemon api
+    // /api/v1/pokemon/1/
+    
     var name: String {
         return _name
     }
@@ -30,5 +35,9 @@ class Pokemon {
     init(name: String, pokedexId: Int) {
         _name = name
         _pokedexId = pokedexId
+        
+        _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(_pokedexId)/"
+        
+        
     }
 }
