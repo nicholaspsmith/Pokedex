@@ -23,9 +23,6 @@ class Pokemon {
     private var _nextEvolutionLvl: String!
     private var _pokemonUrl: String!
     
-    // Calls pokemon api
-    // /api/v1/pokemon/1/
-    
     var name: String {
         return _name
     }
@@ -33,6 +30,43 @@ class Pokemon {
     var pokedexId: Int {
         return _pokedexId
     }
+    
+    var description: String {
+        return _description
+    }
+    
+    var type: String {
+        return _type
+    }
+    
+    var defense: String {
+        return _defense
+    }
+    
+    var height: String {
+        return _height
+    }
+    
+    var weight: String {
+        return _weight
+    }
+    
+    var baseattack: String {
+        return _baseattack
+    }
+    
+    var nextEvolutionTxt: String {
+        return _nextEvolutionTxt
+    }
+    
+    var nextEvolutionId: String {
+        return _nextEvolutionId
+    }
+    
+    var nextEvolutionLvl: String {
+        return _nextEvolutionLvl
+    }
+    
     
     init(name: String, pokedexId: Int) {
         _name = name
