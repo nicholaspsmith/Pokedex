@@ -14,6 +14,24 @@ class PokeDetailVC: UIViewController {
 
     @IBOutlet weak var nameLbl: UILabel!
     
+    @IBOutlet weak var mainImg: UIImageView!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    
+    @IBOutlet weak var typeLbl: UILabel!
+    
+    @IBOutlet weak var defenseLbl: UILabel!
+    
+    @IBOutlet weak var heightLbl: UILabel!
+    
+    @IBOutlet weak var pokedexLbl: UILabel!
+    @IBOutlet weak var weightLbl: UILabel!
+    
+    @IBOutlet weak var baseattackLbl: UILabel!
+    
+    @IBOutlet weak var nextEvoTxtLbl: UILabel!
+    @IBOutlet weak var nextEvoImg1: UIImageView!
+    @IBOutlet weak var nextEvoImg2: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +42,9 @@ class PokeDetailVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func backBtnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 
 }
